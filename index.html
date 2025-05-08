@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="./styles.css"/>
   <script defer src="./script.js"></script>
   <link rel="shortcut icon" href="./Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
       <a class="a" href="./index.html">
@@ -16,16 +19,27 @@
         <span>Jodna Technologies</span>
       </a>
     </div>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>    
 
-    <nav class="nav-links">
-      <a href="./explore.html">Explore</a>
-    </nav>
-
+<!-- Mobile Nav Links -->
+<nav class="mobile-nav-links" id="mobileNav">
+  <div class="mobile-search-container">
+    <input type="text" placeholder="Search creatives work..." class="mobile-search-input" />
+    <span class="mobile-search-icon"><i class="fas fa-search"></i></span>
+  </div>
+  <a href="./explore.html">Explore</a>
+  <a href="#">Log In</a>
+  <a href="#">Sign Up</a>
+</nav>
+<a href="./explore.html">Explore</a>
     <div class="search-container">
       <span class="search-icon">&#128269;</span>
       <input type="text" placeholder="Search Creatives work..." />
     </div>
-
     <div class="icons">
       <div class="notification">
         <span class="bell">&#128276;</span>
@@ -35,7 +49,10 @@
       <button class="btn solid">Sign Up ➜</button>
     </div>
   </header>
-  
+  <div class="mobile-menu-backdrop" id="menuBackdrop"></div>
+
+
+  <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
       <p class="tagline">Get Hired Fast</p>
@@ -48,17 +65,18 @@
         <button class="btn solid">Showcase Your Work ➜</button>
       </div>
     </div>
-  
     <div class="hero-image">
-        <img src="./image 2.png" alt="Creativity Illustration"/>
+      <img src="./image 2.png" alt="Creativity Illustration"/>
     </div>
   </section>
 
+  <!-- Recommendations Section -->
   <section class="section-wrapper">
     <div class="container">
       <h2 class="section-title">Recommended for You</h2>
-
       <div class="grid-layout">
+
+        <!-- Cards -->
         <div class="card">
           <img src="./Frame 1000004673.png" alt="City view at sunset" class="card-image" />
           <div class="card-body">
@@ -80,10 +98,10 @@
           <div class="card-body">
             <h3 class="card-title">UX Design Fundamentals</h3>
             <div class="card-tags">
-                <span class="tag tag-blue">Design</span>
-                <span class="tag tag-green">Beginner</span>
-                <span class="tag tag-purple">Tutorial</span>
-              </div>
+              <span class="tag tag-blue">Design</span>
+              <span class="tag tag-green">Beginner</span>
+              <span class="tag tag-purple">Tutorial</span>
+            </div>
             <div class="card-footer">
               <span>25 mins</span>
               <span>890 views</span>
@@ -92,52 +110,42 @@
         </div>
 
         <div class="card">
-            <img src="./Frame 1000004673(2).png" alt="Laptop keyboard with code" class="card-image" />
-            <div class="card-body">
-              <h3 class="card-title">UX Design Fundamentals</h3>
-              <div class="card-tags">
-                <span class="tag tag-blue">Design</span>
-                <span class="tag tag-green">Beginner</span>
-                <span class="tag tag-purple">Tutorial</span>
-              </div>
-              <div class="card-footer">
-                <span>25 mins</span>
-                <span>890 views</span>
-              </div>
+          <img src="./Frame 1000004673(2).png" alt="Creative workspace" class="card-image" />
+          <div class="card-body">
+            <h3 class="card-title">UX Design Fundamentals</h3>
+            <div class="card-tags">
+              <span class="tag tag-blue">Design</span>
+              <span class="tag tag-green">Beginner</span>
+              <span class="tag tag-purple">Tutorial</span>
             </div>
-          </div>
-
-          <div class="card">
-            <img src="./Frame 1000004673(3).png" alt="Laptop keyboard with code" class="card-image" />
-            <div class="card-body">
-              <h3 class="card-title">UX Design Fundamentals</h3>
-              <div class="card-tags">
-                <span class="tag tag-blue">Design</span>
-                <span class="tag tag-green">Beginner</span>
-                <span class="tag tag-purple">Tutorial</span>
-              </div>
-              <div class="card-footer">
-                <span>25 mins</span>
+            <div class="card-footer">
+              <span>25 mins</span>
               <span>890 views</span>
-              </div>
             </div>
           </div>
+        </div>
+
+        <div class="card">
+          <img src="./Frame 1000004673(3).png" alt="Creative UI Design" class="card-image" />
+          <div class="card-body">
+            <h3 class="card-title">UX Design Fundamentals</h3>
+            <div class="card-tags">
+              <span class="tag tag-blue">Design</span>
+              <span class="tag tag-green">Beginner</span>
+              <span class="tag tag-purple">Tutorial</span>
+            </div>
+            <div class="card-footer">
+              <span>25 mins</span>
+              <span>890 views</span>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jodna Technologies Footer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="newsletter">
@@ -151,7 +159,7 @@
           <button type="submit">Subscribe</button>
         </form>
         <p class="agreement">
-          By subscribing you agree to with our <a href="#">Privacy Policy</a> and provide consent to receive updates from our company.
+          By subscribing you agree to our <a href="#">Privacy Policy</a> and consent to receive updates from our company.
         </p>
       </div>
 
@@ -171,7 +179,6 @@
           <ul>
             <li><a href="#">Contact</a></li>
             <li><a href="#">FAQs</a></li>
-            <li><a href="#">Contact</a></li>
           </ul>
         </div>
         <div class="column">
@@ -196,9 +203,6 @@
       </div>
     </div>
   </footer>
-
-</body>
-</html>
 
 </body>
 </html>
