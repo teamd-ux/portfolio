@@ -1,39 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore</title>
-    <link rel="stylesheet" href="./styles.css"/>
-  <script defer src="./script.js"></script>
-  <link rel="shortcut icon" href="./Logo.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore - Jodna Technologies</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand img {
+      height: 28px;
+    }
+
+    .search-input {
+      flex: 1;
+      margin: 0 2rem;
+      position: relative;
+    }
+
+    .search-input input {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .share-btn {
+      background-color: #e7f7f1;
+      color: #2aa978;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    .container {
+      display: flex;
+      padding: 1rem 2rem;
+      gap: 2rem;
+    }
+
+    .filter {
+      width: 220px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .filter h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .filter-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-group h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .filter-group label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .tags button {
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 0.8rem;
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-tags span {
+      display: inline-block;
+      background: #e6f4ff;
+      color: #0077cc;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .filter {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="logo">
-          <a class="a" href="./index.html">
-            <img src="./Logo.png" alt="Logo"/>
-            <span>Jodna Technologies</span>
-          </a>
-        </div>
-    
-        <nav class="nav-links">
-          <a href="./explore.html">Explore</a>
-        </nav>
-    
-        <div class="search-container">
-          <span class="search-icon">&#128269;</span>
-          <input type="text" placeholder="Search Creatives work..." />
-        </div>
-    
-        <div class="icons">
-          <div class="notification">
-            <span class="bell">&#128276;</span>
-            <span class="badge">0</span>
+  <header>
+    <div class="logo">
+      <a class="a" href="./index.html">
+        <img src="./Logo.png" alt="Logo"/>
+        <span>Jodna Technologies</span>
+      </a>
+    </div>
+    <div class="search-input">
+      <input type="text" placeholder="Search Creative work...">
+    </div>
+    <button class="share-btn">Share Your Work</button>
+    <div class="profile">
+      <img src="./avatar.jpg" alt="profile">
+      <div>
+        <strong>Adewale Austin</strong><br>
+        <small>UI/UX Design Intern</small>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="filter">
+      <h3>Filter</h3>
+      <div class="filter-group">
+        <h4>Design</h4>
+        <label><input type="checkbox"> Figma</label>
+        <label><input type="checkbox"> Adobe XD</label>
+        <label><input type="checkbox"> Sketch</label>
+        <label><input type="checkbox"> Canva</label>
+      </div>
+      <div class="filter-group">
+        <h4>Frontend</h4>
+        <label><input type="checkbox"> React</label>
+        <label><input type="checkbox"> Angular</label>
+        <label><input type="checkbox"> HTML/CSS</label>
+        <label><input type="checkbox"> Tailwind</label>
+      </div>
+      <div class="filter-group">
+        <h4>Backend</h4>
+        <label><input type="checkbox"> Node.js</label>
+        <label><input type="checkbox"> Django</label>
+        <label><input type="checkbox"> Flask</label>
+        <label><input type="checkbox"> Laravel</label>
+      </div>
+      <div class="filter-group">
+        <h4>Others</h4>
+        <label><input type="checkbox"> WordPress</label>
+        <label><input type="checkbox"> Webflow</label>
+        <label><input type="checkbox"> Blender</label>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="tags">
+        <button>All</button>
+        <button>UI/UX Design</button>
+        <button>Frontend</button>
+        <button>Graphic Design</button>
+        <button>Backend</button>
+        <button>Web Dev</button>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <img src="./Frame 1000004673(1).png" alt="">
+          <div class="card-body">
+            <p class="card-title">UX Design Fundamentals</p>
+            <div class="card-tags">
+              <span>Design</span>
+              <span>Figma</span>
+              <span>Tailwind</span>
+            </div>
           </div>
-          <button class="btn outline">Log In</button>
-          <button class="btn solid">Sign Up ➜</button>
         </div>
-      </header>
+        <div class="card">
+          <img src="./Frame 1000004673(2).png" alt="">
+          <div class="card-body">
+            <p class="card-title">UX Design Fundamentals</p>
+            <div class="card-tags">
+              <span>Design</span>
+              <span>Figma</span>
+              <span>Tailwind</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./Frame 1000004673(3).png" alt="">
+          <div class="card-body">
+            <p class="card-title">UX Design Fundamentals</p>
+            <div class="card-tags">
+              <span>Design</span>
+              <span>Figma</span>
+              <span>Tailwind</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./Frame 1000004673(1).png" alt="">
+          <div class="card-body">
+            <p class="card-title">UX Design Fundamentals</p>
+            <div class="card-tags">
+              <span>Design</span>
+              <span>Figma</span>
+              <span>Tailwind</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./Frame 1000004673(2).png" alt="">
+          <div class="card-body">
+            <p class="card-title">UX Design Fundamentals</p>
+            <div class="card-tags">
+              <span>Design</span>
+              <span>Figma</span>
+              <span>Tailwind</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./Frame 1000004673(3).png" alt="">
+          <div class="card-body">
+            <p class="card-title">UX Design Fundamentals</p>
+            <div class="card-tags">
+              <span>Design</span>
+              <span>Figma</span>
+              <span>Tailwind</span>
+            </div>
+          </div>
+        </div>
+        <!-- Add more cards as in the image -->
+      </div>
+    </main>
+  </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="newsletter">
+        <div class="logo-text">
+          <img src="./Logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Jodna Technologies</span>
+        </div>
+        <p class="newsletter-text">Join our newsletter to stay up to date on features and releases.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="agreement">
+          By subscribing you agree to our <a href="#">Privacy Policy</a> and consent to receive updates from our company.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div class="column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">CSR</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-x-twitter"></i> X</a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i> Youtube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2023 Jodna Technologies. All rights reserved.</p>
+      <div class="footer-policy-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookies Settings</a>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
